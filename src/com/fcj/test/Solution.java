@@ -319,8 +319,10 @@ public class Solution {
             prev.next = l1;
         }
 
+        System.out.println("ha");
 
         return head.next;
+
 
     }
 
