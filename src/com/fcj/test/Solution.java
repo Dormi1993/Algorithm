@@ -19,6 +19,7 @@ public class Solution {
      */
     public int[] twoSum(int[] nums, int target) {
 
+        //也正确
         for (int i = 0; i < nums.length - 1; i ++){
             for (int j = i + 1; j < nums.length; j ++){
                 if ((nums[i] + nums[j]) == target){
@@ -29,6 +30,7 @@ public class Solution {
         }
         return null;
 
+        //网上答案
 //        int[] result = new int[2];
 //        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 //        for (int i = 0; i < nums.length; i++) {
@@ -67,43 +69,13 @@ public class Solution {
         return head.next;//因为head是指向了最开始的ListNode(0)的，所以要return head.next
     }
 
-/*    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        return helper(l1,l2,0);
-    }
-
-    public ListNode helper(ListNode l1, ListNode l2, int carry){
-        if(l1==null && l2==null){
-            return carry == 0? null : new ListNode(carry);
-        }
-        if(l1==null && l2!=null){
-            l1 = new ListNode(0);
-        }
-        if(l2==null && l1!=null){
-            l2 = new ListNode(0);
-        }
-        int sum = l1.val + l2.val + carry;
-        ListNode curr = new ListNode(sum % 10);
-        curr.next = helper(l1.next, l2.next, sum / 10);
-        return curr;
-    }*/
 
     /**
      *3. Longest Substring Without Repeating Characters
      */
     public int lengthOfLongestSubstring(String s) {
 
-//        if (s.length()==0) return 0;
-//        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-//        int max=0;
-//        for (int i=0, j=0; i<s.length(); ++i){
-//            if (map.containsKey(s.charAt(i))){
-//                j = Math.max(j,map.get(s.charAt(i))+1);
-//            }
-//            map.put(s.charAt(i),i);
-//            max = Math.max(max,i-j+1);
-//        }
-//        return max;
-//    }
+
 
         if (s.length() == 0){
             return 0;
@@ -157,27 +129,12 @@ public class Solution {
         return (x==rev || x==rev/10);
     }
 
-//        if (x < 0 || (x != 0 && x % 10 == 0)){
-//            return false;
-//        }
-//        int a = x;
-//        int result = 0;
-//        int newresult = 0;
-//        while (x != 0){
-//            int temp = x % 10;
-//            newresult = result * 10 + temp;
-//            if ((newresult - temp) / 10 != result){
-//                return false;
-//            }
-//            x /= 10;
-//            result = newresult;
-//        }
-//        if (a == result){
-//            return true;
-//        } else {
-//            return false;
-//        }
 
+    /**
+     * 13. Roman to Integer
+     * @param s
+     * @return
+     */
     public int romanToInt(String s){
         HashMap<Character, Integer> hashMap = new HashMap<Character, Integer>();
         hashMap.put('I', 1);
@@ -293,39 +250,54 @@ public class Solution {
     }
 
     /**
-     * 21. Merge Two Sorted Lists
+     * 21. Merge Two Sorted Lists 利用了递归
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2){
 
-
-        System.out.println("hao");
-        
-        ListNode head = new ListNode(0);
-        ListNode prev = head;
-
-        while (l1 != null && l2 != null){
-            if (l1.val < l2.val){
-                prev.next = l1;
-                prev = l1;
-                l1 = l1.next;
-            }
-            if (l1.val > l2.val){
-                prev.next = l2;
-                prev = l2;
-                l2 = l2.next;
-            }
-        }
-
         if (l1 == null){
-            prev.next = l2;
+            return l2;
         }
         if (l2 == null){
-            prev.next = l1;
+            return l1;
         }
 
-        System.out.println("ha");
+        ListNode head = new ListNode(0);
+        if (l1.val < l2.val){
+            head = l1;
+            head.next = mergeTwoLists(l1.next, l2);
+        } else {
+            head = l2;
+            head.next = mergeTwoLists(l1, l2.next);
+        }
 
-        return head.next;
+        return head;
+//
+//            //错误
+//        ListNode head = new ListNode(0);
+//        ListNode prev = head;
+//
+//        while (l1.next != null && l2.next != null){
+//
+//            if (l1.val < l2.val){
+//                prev.next = l1;
+//                prev = l1;
+//                l1 = l1.next;
+//            }
+//            if (l1.val > l2.val){
+//                prev.next = l2;
+//                prev = l2;
+//                l2 = l2.next;
+//            }
+//        }
+//
+//        if (l1.next == null){
+//            prev.next = l2;
+//        }
+//        if (l2.next == null){
+//            prev.next = l1;
+//        }
+//
+//        return head.next;
 
 
     }
