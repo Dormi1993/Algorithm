@@ -33,6 +33,15 @@ public class Sortfcj {
      * @return
      */
     public int adjustArray(int[] s, int l, int r){//返回调整后基准数的位置
+
+//        swap(s[l], s[(l + r) / 2]);
+
+//        Sortfcj sortfcj = new Sortfcj();
+//        int hh = sortfcj.findMedian(s, l, r);
+
+        int ha = findMedian(s, l, r);
+        swap(s[l], ha);
+
         int i = l, j = r;
         int x = s[l];
         while (i < j){
@@ -56,6 +65,28 @@ public class Sortfcj {
         return i;
     }
 
+    public int findMedian(int s[], int left, int right){
+
+        int center = (left + right) / 2;
+        if (s[center] < s[left]){
+            swap(s[center], s[left]);
+        }
+        if (s[right] < s[left]){
+            swap(s[right], s[left]);
+        }
+        if (s[right] < s[center]){
+            swap(s[right], s[center]);
+        }
+
+        return s[center];
+    }
+
+    public void swap(int a, int b){
+        int temp = a;
+        a = b;
+        b = a;
+    }
+
     public void quickSort(int s[], int l, int r){
         if (l < r){
             int i = adjustArray(s, l, r);
@@ -65,8 +96,10 @@ public class Sortfcj {
     }
 
 
-
-    //插入排序
+    /**
+     * 插入排序by dormi
+     * @param a
+     */
     public void insertionSort(int a[]){
 
         int j;
