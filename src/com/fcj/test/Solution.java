@@ -296,6 +296,10 @@ public class Solution {
      * 21. Merge Two Sorted Lists
      */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2){
+
+
+        System.out.println("hao");
+        
         ListNode head = new ListNode(0);
         ListNode prev = head;
 
