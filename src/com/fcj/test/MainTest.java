@@ -2,6 +2,8 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
+import java.util.HashMap;
+
 /**
  * Created by Administrator on 2017/2/18 0018.
  */
@@ -79,15 +81,66 @@ public class MainTest {
         /**
          * 21. Merge Two Sorted Lists
          */
-        MainTest mainTest = new MainTest();
-        ListNode l1 = mainTest.create(new int[] {1, 3, 4});
-        ListNode l2 = mainTest.create(new int[] {2, 5, 7});
+//        MainTest mainTest = new MainTest();
+//        ListNode l1 = mainTest.create(new int[] {1, 3, 4});
+//        ListNode l2 = mainTest.create(new int[] {2, 5, 7});
+//
+////        mainTest.print(l2);
+//
+//        Solution solution = new Solution();
+//        ListNode hh = solution.mergeTwoLists(l1, l2);
+//        mainTest.print(hh);
 
-//        mainTest.print(l2);
+        /**
+         * 26. Remove Duplicates from Sorted Array
+         */
+//        Solution solution = new Solution();
+//        int result = solution.removeDuplicates(new int[]{1, 1, 3, 3, 3, 5, 5});
+//        System.out.println(result);
+
+        /**
+         * 28. Implement strStr()
+         */
+//        Solution solution = new Solution();
+//        int num = solution.strStr("abcdefg", "cd");
+//        System.out.println(num);
+//
+//        System.out.println("abc" == "abc");
+//
+//        String a = "abc";
+//        String b = "abc";
+//
+//        String c = new String("haha");
+//        String d = new String("haha");
+//
+//        System.out.println(a == b);
+//        System.out.println(c == d);
+
+//        Solution solution = new Solution();
+//        int num = solution.searchInsert(new int[]{2, 4, 5, 7}, 9);
+//        System.out.println(num);
+
+
+//        Solution solution = new Solution();
+//
+////        System.out.println(solution.maxSubArray(new int[] {-2,1,-3,4,-1,2,1,-5,4}));
+//        int num = solution.lengthOfLastWord("lad ");
+//        System.out.println(num);
+
+//        String s = "gagh";
+//        int num = s.lastIndexOf(" ");
+//        System.out.println(num);
+
+//        int nums[] = solution.plusOne(new int[]{9,9,9,9});
+//        for (int num : nums){
+//            System.out.print(num);
+//        }
 
         Solution solution = new Solution();
-        ListNode hh = solution.mergeTwoLists(l1, l2);
-        mainTest.print(hh);
+        String s = solution.addBinary("1011001", "1011");
+        System.out.println(s);
+
+
 
 
     }
