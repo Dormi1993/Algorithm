@@ -1,5 +1,6 @@
 package com.fcj.sort.test;
 
+import com.fcj.sort.demo.ahh;
 import com.fcj.sort.util.Sortfcj;
 
 /**
@@ -38,8 +39,14 @@ public class Test1 {
 
 
 
-        for (int aa : arr){
-            System.out.println(aa);
-        }
+
+
+//        for (int aa : arr){
+//            System.out.println(aa);
+//        }
+
+        ahh a =new ahh();
+        System.out.println(a.isPalindrome(123));
+
     }
 }
