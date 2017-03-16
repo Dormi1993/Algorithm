@@ -125,6 +125,12 @@ public class MainTest {
 //        Solution solution = new Solution();
 //        ListNode ha = solution.removeNthFromEnd(l1,6);
 //        mainTest.print(ha);
+//        Solution solution = new Solution();
+//        List a = solution.fourSum(new int[]{0,0,0,0}, 0);
+//        Iterator it = a.iterator();
+//        while (it.hasNext()){
+//            System.out.println(it.next());
+//        }
 
         /**
          * 20. Valid Parentheses
@@ -230,6 +236,21 @@ public class MainTest {
 //                System.out.println(arr);
 //            }
 //        }
+        //28
+        Solution solution = new Solution();
+        int num = solution.strStr("mississippi","issip");
+        System.out.println(num);
+
+
+
+        /**
+         * 38.
+         */
+
+//        Solution solution = new Solution();
+//        String a = solution.countAndSay(4);
+//        System.out.println(a);
+
 
         Map<String, String> map = new HashMap<String, String>();
         map.put("a", "gd");
