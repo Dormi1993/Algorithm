@@ -2,7 +2,7 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/2/18 0018.
@@ -13,14 +13,14 @@ public class MainTest {
         /**
          * 1. Two Sum
          */
-/*        int nums[] = {4, 2, 11, 7, 15};
-        int target = 9;
-
-        Solution solution = new Solution();
-        int[] result = solution.twoSum(nums, target);
-        for (int i = 0; i < result.length; i++){
-            System.out.println(result[i]);
-        }*/
+//        int nums[] = {4, 2, 11, 7, 15};
+//        int target = 9;
+//
+//        Solution solution = new Solution();
+//        int[] result = solution.twoSum(nums, target);
+//        for (int i = 0; i < result.length; i++){
+//            System.out.println(result[i]);
+//        }
 
         /**
          * 2. Add Two Numbers
@@ -36,16 +36,45 @@ public class MainTest {
         /**
          * 3.
          */
-//        String s = "a";
+//        String s = "abccgef";
 //        Solution solution = new Solution();
 //        int aa = solution.lengthOfLongestSubstring(s);
+//
+//
 //        System.out.println(aa);
+
+        /**
+         * 4.
+         */
+//        Solution solution = new Solution();
+//        Double result = solution.findMedianSortedArrays(new int[]{1,3}, new int[]{2});
+//        System.out.println(result);
+//        String s = "gtg";
+//        System.out.println(s.substring(1,5));
+
+//        StringBuffer stringBuffer = new StringBuffer(s);
+//        System.out.println(s.equals(stringBuffer.reverse().toString()));
+
+        /**
+         * 5.
+         */
+//        Solution solution = new Solution();
+//        int result = solution.binarySearch(new int[]{1,5,6,8,10}, 5);
+//        System.out.println(result);
+
+        /**
+         * 6.
+         */
+//        Solution solution = new Solution();
+//        String result = solution.convert("PAYPALISHIRING", 3);
+//        System.out.println(result);
+
 
 
         /**
          * 7.
          */
-//        int num = 234;
+//        int num = -234;
 //        Solution solution = new Solution();
 //        System.out.println(solution.reverse(num));
 
@@ -61,14 +90,41 @@ public class MainTest {
          */
 
 //        Solution solution = new Solution();
-//        String[] arr = {"leets", "leetCode", "leed"};
-//        String[] arr = {"", "b"};
+////        String[] arr = {"leets", "leetCode", "leed"};
+//        String[] arr = {"dg", "df", "gg"};
+////        String[] arr = {"", "b"};
 //        String result = solution.longestCommonPrefix(arr);
 //        System.out.println(result);
+//
+//        String aa = "grsag";
+//        String bb = "gr";
+//        int index = aa.indexOf(bb);
+//        System.out.println(index);
 
 
 //        String a = "abcdef";
 //        System.out.println(a.substring(0, 2));
+
+        /**
+         * 17.
+         */
+//        Solution solution = new Solution();
+//        solution.letterCombinations("43");
+
+
+
+        /**
+         * 19
+         */
+//        MainTest mainTest = new MainTest();
+//        ListNode l1 = mainTest.create(new int[] {1, 3, 4, 6, 8, 9});
+//        mainTest.print(l1);
+//
+//        System.out.println(" ");
+//
+//        Solution solution = new Solution();
+//        ListNode ha = solution.removeNthFromEnd(l1,6);
+//        mainTest.print(ha);
 
         /**
          * 20. Valid Parentheses
@@ -136,12 +192,59 @@ public class MainTest {
 //            System.out.print(num);
 //        }
 
-        Solution solution = new Solution();
-        String s = solution.addBinary("1011001", "1011");
-        System.out.println(s);
+//        Solution solution = new Solution();
+//        String s = solution.addBinary("1011", "1011001");
+//        String A = "34";
+//        System.out.println(s);
+//        System.out.println(A);
 
 
+//        Solution solution = new Solution();
+//        int aa = solution.climbStairs(5);
+//        System.out.println(aa);
 
+        //华为
+//        int n = 8;
+//        int[] arrs = new int[n];
+//        Solution.chansheng(arrs, n);
+//        Solution solution = new Solution();
+//        System.out.println("排序之前：");
+//        solution.print(arrs);
+//        System.out.println("");
+//        System.out.println("排序之后：");
+//        solution.sort(arrs);
+//        solution.print(arrs);
+
+
+//        Scanner sc = new Scanner(System.in);
+//
+////        while (sc.hasNext()){
+//            int count = sc.nextInt();
+//            Set<Integer> set = new TreeSet<Integer>();
+//            for (int i = 0; i < count; i++){
+//                int num = sc.nextInt();
+//
+//                set.add(num);
+//            }
+//            for (int arr : set){
+//                System.out.println(arr);
+//            }
+//        }
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("a", "gd");
+        map.put("r", "gdaa");
+        map.put("t", "gdgd");
+
+        for (Map.Entry entry : map.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+
+//        Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+//        while (it.hasNext()){
+//            Map.Entry<String,String> entry = it.next();
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
 
     }
 
@@ -188,4 +291,6 @@ public class MainTest {
         }
         System.out.print("null");
     }
+
+
 }

@@ -40,7 +40,7 @@ public class Sortfcj {
 //        int hh = sortfcj.findMedian(s, l, r);
 
         int ha = findMedian(s, l, r);
-        swap(s[l], ha);
+        swap(s[l], ha);//swap没有用
 
         int i = l, j = r;
         int x = s[l];
@@ -184,5 +184,44 @@ public class Sortfcj {
 //        a[ index2 ] = tmp;
 //    }
 
+    //快速排序
+    public static int quickGet(int[] a, int l, int r){
+
+        int i = l, j = r;
+        int temp = a[l];
+
+        while (i < j){
+
+            while (i < j && a[j] >= temp){
+                j--;
+            }
+            if (i < j){
+                a[i] = a[j];
+                i++;
+            }
+
+            while (i < j && a[i] < temp){
+                i++;
+            }
+            if (i < j){
+                a[j] = a[i];
+                j--;
+            }
+
+
+        }
+        a[i] = temp;
+        return i;
+
+
+    }
+
+    public static void quick(int[] a, int l, int r){
+        if (l < r){
+            int i = quickGet(a, l, r);
+            quick(a, l, i - 1);
+            quick(a, i + 1, r);
+        }
+    }
 
 }

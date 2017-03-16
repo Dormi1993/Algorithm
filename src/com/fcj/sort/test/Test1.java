@@ -1,6 +1,5 @@
 package com.fcj.sort.test;
 
-import com.fcj.sort.demo.ahh;
 import com.fcj.sort.util.Sortfcj;
 
 /**
@@ -34,19 +33,33 @@ public class Test1 {
 
 //        Sortfcj.bubbleSort(arr);
 
-        Sortfcj sortfcj = new Sortfcj();
-        sortfcj.quickSort(arr, 0, 7);
+//        Sortfcj sortfcj = new Sortfcj();
+
+        int[] acc = new int[]{4,2,5,1,7,9,3,8};
+        Sortfcj.quick(acc, 0, 7);
 
 
 
 
 
-//        for (int aa : arr){
-//            System.out.println(aa);
+        for (int aa : acc){
+            System.out.print(aa);
+        }
+
+
+//        TestSingleton ts1 = TestSingleton.getInstance();
+//        ts1.setName("jason");
+//        TestSingleton ts2 = TestSingleton.getInstance();
+//        ts2.setName("0539");
+//
+//        ts1.printInfo();
+//        ts2.printInfo();
+//
+//        if(ts1 == ts2){
+//            System.out.println("创建的是同一个实例");
+//        }else{
+//            System.out.println("创建的不是同一个实例");
 //        }
-
-        ahh a =new ahh();
-        System.out.println(a.isPalindrome(123));
 
     }
 }
