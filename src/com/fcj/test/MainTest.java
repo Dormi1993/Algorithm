@@ -4,6 +4,7 @@ import com.fcj.test.publicClass.ListNode;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.HashMap;
 
 /**
  * Created by Administrator on 2017/2/18 0018.
@@ -102,6 +103,51 @@ public class MainTest {
 //        ListNode hh = solution.mergeTwoLists(l1, l2);
 //        mainTest.print(hh);
 
+        /**
+         * 26. Remove Duplicates from Sorted Array
+         */
+//        Solution solution = new Solution();
+//        int result = solution.removeDuplicates(new int[]{1, 1, 3, 3, 3, 5, 5});
+//        System.out.println(result);
+
+        /**
+         * 28. Implement strStr()
+         */
+//        Solution solution = new Solution();
+//        int num = solution.strStr("abcdefg", "cd");
+//        System.out.println(num);
+//
+//        System.out.println("abc" == "abc");
+//
+//        String a = "abc";
+//        String b = "abc";
+//
+//        String c = new String("haha");
+//        String d = new String("haha");
+//
+//        System.out.println(a == b);
+//        System.out.println(c == d);
+
+//        Solution solution = new Solution();
+//        int num = solution.searchInsert(new int[]{2, 4, 5, 7}, 9);
+//        System.out.println(num);
+
+
+//        Solution solution = new Solution();
+//
+////        System.out.println(solution.maxSubArray(new int[] {-2,1,-3,4,-1,2,1,-5,4}));
+//        int num = solution.lengthOfLastWord("lad ");
+//        System.out.println(num);
+
+//        String s = "gagh";
+//        int num = s.lastIndexOf(" ");
+//        System.out.println(num);
+
+//        int nums[] = solution.plusOne(new int[]{9,9,9,9});
+//        for (int num : nums){
+//            System.out.print(num);
+//        }
+
         //28
         Solution solution = new Solution();
         int num = solution.strStr("mississippi","issip");
@@ -116,6 +162,7 @@ public class MainTest {
 //        Solution solution = new Solution();
 //        String a = solution.countAndSay(4);
 //        System.out.println(a);
+
 
 
     }

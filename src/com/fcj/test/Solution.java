@@ -2,7 +2,9 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
+
 import java.util.*;
+
 
 /**
  * Created by Administrator on 2017/2/18 0018.
@@ -411,58 +413,222 @@ public class Solution {
 
 
 
+
+
+
+
     /**
-     * 38.
+     * 27简单
+     */
+
+    /**
+     * 28. Implement strStr()
+     */
+
+
+    public int searchInsert(int[] nums, int target) {
+        int result = 0;
+        for (int i = 0; i < nums.length; i++){
+
+            if (nums[i] >= target){
+                return i;
+            }
+            result = i + 1;
+
+        }
+        return result;
+    }
+
+    /**
+     * 38. Count and Say
+     * @param n
+     * @return
      */
     public String countAndSay(int n) {
 
-//        StringBuilder curr=new StringBuilder("1");
-//        StringBuilder prev;
-//        int count;
-//        char say;
-//        for (int i=1;i<n;i++){
-//            prev=curr;
-//            curr=new StringBuilder();
-//            count=1;
-//            say=prev.charAt(0);
-//
-//            for (int j=1,len=prev.length();j<len;j++){
-//                if (prev.charAt(j)!=say){
-//                    curr.append(count).append(say);
-//                    count=1;
-//                    say=prev.charAt(j);
-//                }
-//                else count++;
-//            }
-//            curr.append(count).append(say);
-//        }
-//        return curr.toString();
-
-        StringBuilder curr = new StringBuilder("1");
+        StringBuilder curr=new StringBuilder("1");
         StringBuilder prev;
         int count;
         char say;
+        for (int i=1;i<n;i++){
+            prev=curr;
+            curr=new StringBuilder();
+            count=1;
+            say=prev.charAt(0);
 
-        for (int i = 1; i < n; i++){
-            prev = curr;
-            curr = new StringBuilder();
-            count = 1;
-            say = prev.charAt(0);
-            for (int j = 1, len = prev.length(); j < len; j++){
-                if (say == prev.charAt(j)){
-                    count++;
-                } else {
+            for (int j=1,len=prev.length();j<len;j++){
+                if (prev.charAt(j)!=say){
                     curr.append(count).append(say);
-                    count = 1;
-                    say = prev.charAt(j);
+                    count=1;
+                    say=prev.charAt(j);
                 }
-
+                else count++;
             }
             curr.append(count).append(say);
         }
+        return curr.toString();
 
-        return String.valueOf(curr);
 
+    }
+
+    public int haha(){
+        int x = 1211;
+        String temp = String.valueOf(x);
+        int len = temp.length();
+        int c = x / 10;
+        int result = 0;
+        for (int i = 1; i < temp.length(); i++){
+            x = (int) (x - c * Math.pow(10, len - i));
+            int num = 1;
+            if (x < 10){
+                if (x == c){
+                    num++;
+                }
+            }
+            if (x / 10 == c){
+                num++;
+
+            }
+
+            result = num * 10 + c;
+
+            c = x / 10;
+        }
+
+        return result;
+    }
+
+    public int maxSubArray(int[] nums) {
+//        //网上答案
+//        int n = A.length;
+//        int[] dp = new int[n];//dp[i] means the maximum subarray ending with A[i];
+//        dp[0] = A[0];
+//        int max = dp[0];
+//
+//        for(int i = 1; i < n; i++){
+//            dp[i] = A[i] + (dp[i - 1] > 0 ? dp[i - 1] : 0);
+//            max = Math.max(max, dp[i]);
+//        }
+//
+//        return max;
+
+        int result = nums[0];
+        for (int i = 0; i < nums.length; i++){
+            int sum = nums[i];
+            int max = sum;
+            for (int j = i + 1; j < nums.length; j++){
+
+                sum += nums[j];
+                if (sum > max){
+                    max = sum;
+                }
+
+            }
+            if(result < max){
+                result = max;
+            }
+
+        }
+
+        return result;
+    }
+
+    public int lengthOfLastWord(String s) {
+
+        String temp;
+        temp = s.trim();
+        int len = temp.length();
+        if (len == 0){
+            return 0;
+        }
+        int index = temp.lastIndexOf(" ");
+        if (index != -1){
+            return len - 1 - index;
+        } else {
+            return len;
+        }
+
+
+    }
+
+    /**
+     * 66. Plus One
+     * @param digits
+     * @return
+     */
+    public int[] plusOne(int[] digits) {
+
+        int sum = 0;
+        int newsum;
+        for (int temp : digits){
+            sum = sum * 10 + temp;
+        }
+        newsum = sum + 1;
+
+//        char a = '3';
+//        int b = a;
+//        System.out.println(b);
+
+        String str = String.valueOf(newsum);
+        int len = str.length();
+        int num[] = new int[len];
+        for (int i = 0; i < len; i++){
+            num[i] = Integer.parseInt(str.charAt(i) + "");
+        }
+        return num;
+
+    }
+
+    public String addBinary(String a, String b) {
+
+        StringBuilder str = new StringBuilder();
+
+        int len1 = a.length();
+        int len2 = b.length();
+        int[] nums1 = new int[len1];
+        int[] nums2 = new int[len2];
+        for (int i = 0; i < len1; i++){
+            nums1[i] = a.charAt(i);
+        }
+        for (int i = 0; i < len2; i++){
+            nums2[i] = b.charAt(i);
+        }
+
+        int len = (len1 >= len2) ? len2 : len1;
+        int[] numhou = new int[(len1 >= len2) ? len1 : len2];
+        int diff = (len1 >= len2) ? (len1 - len2) : (len2 - len1);
+        int count = 0;
+        for (int i = len - 1; i >= 0; i--){
+//            if (len1 >= len2){
+                if (nums1[i + diff] + nums2[i] + count == 2){
+                    count = 1;
+                    numhou[i + diff] = 0;
+                } else {
+                    count = 0;
+                    numhou[i + diff] = 1;
+                }
+
+//            }
+        }
+
+        if (len1 >= len2){
+            for (int i = diff - 1; i >= 0; i--){
+                if (nums1[i] + count == 2){
+                    count = 1;
+                    numhou[i] = 0;
+                } else {
+                    count = 0;
+                    numhou[i] = 1;
+                }
+            }
+            if (count == 1){
+                str = str.append("1").append(Arrays.toString(numhou));
+            } else {
+                str = str.append(Arrays.toString(numhou));
+            }
+
+       }
+        return String.valueOf(str);
     }
 
 }
