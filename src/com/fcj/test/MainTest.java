@@ -2,6 +2,9 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/2/18 0018.
  */
@@ -69,6 +72,16 @@ public class MainTest {
 //        System.out.println(a.substring(0, 2));
 
         /**
+         * 18
+         */
+//        Solution solution = new Solution();
+//        List a = solution.fourSum(new int[]{0,0,0,0}, 0);
+//        Iterator it = a.iterator();
+//        while (it.hasNext()){
+//            System.out.println(it.next());
+//        }
+
+        /**
          * 20. Valid Parentheses
          */
 //        Solution solution = new Solution();
@@ -79,15 +92,30 @@ public class MainTest {
         /**
          * 21. Merge Two Sorted Lists
          */
-        MainTest mainTest = new MainTest();
-        ListNode l1 = mainTest.create(new int[] {1, 3, 4});
-        ListNode l2 = mainTest.create(new int[] {2, 5, 7});
+//        MainTest mainTest = new MainTest();
+//        ListNode l1 = mainTest.create(new int[] {1, 3, 4});
+//        ListNode l2 = mainTest.create(new int[] {2, 5, 7});
+//
+////        mainTest.print(l2);
+//
+//        Solution solution = new Solution();
+//        ListNode hh = solution.mergeTwoLists(l1, l2);
+//        mainTest.print(hh);
 
-//        mainTest.print(l2);
-
+        //28
         Solution solution = new Solution();
-        ListNode hh = solution.mergeTwoLists(l1, l2);
-        mainTest.print(hh);
+        int num = solution.strStr("mississippi","issip");
+        System.out.println(num);
+
+
+
+        /**
+         * 38.
+         */
+
+//        Solution solution = new Solution();
+//        String a = solution.countAndSay(4);
+//        System.out.println(a);
 
 
     }

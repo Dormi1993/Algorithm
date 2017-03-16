@@ -2,9 +2,7 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/2/18 0018.
@@ -220,6 +218,62 @@ public class Solution {
     }
 
 
+
+
+    /**
+     * 18. 4Sum
+     * @param nums
+     * @param target
+     * @return
+     */
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> list = new LinkedList();
+        List<Integer> listin = new LinkedList();
+
+        int len = nums.length;
+        int result = 0;
+        int lo = 0;
+        int lm = 0;
+
+        for (int i = 0; i < len - 3; i++){
+            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])){
+                for (int j = i + 1; j < len - 2; j++){
+                    if (j == i + 1 || (j > i + 1 && nums[j] != nums[j - 1])){
+                        result = target - nums[i] - nums[j];
+                        lo = j + 1;
+                        lm = len - 1;
+                        while (lo < lm){
+                            if (nums[lo] + nums[lm] == result){
+                                list.add(Arrays.asList(nums[i], nums[j], nums[lo], nums[lm]));
+
+                                while (lo < lm && nums[lo] == nums[lo + 1]){
+                                    lo++;
+                                }
+                                while (lo < lm && nums[lm] == nums[lm - 1]){
+                                    lm--;
+                                }
+                                lo++;
+                                lm--;
+                            } else if (nums[lo] + nums[lm] < result){
+                                lo++;
+                            } else {
+                                lm--;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        return list;
+
+
+    }
+
     /**
      * 20. Valid Parentheses 使用了Stack
      * @param s
@@ -299,6 +353,115 @@ public class Solution {
 //
 //        return head.next;
 
+
+    }
+
+    /**
+     * 28. Implement strStr()
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public int strStr(String haystack, String needle) {
+        // int index = 0;
+
+        // index = haystack.indexOf(needle);
+        // return index;
+        int len1 = haystack.length();
+        int len2 = needle.length();
+
+        if (len1 == 0 && len2 == 0){
+            return 0;
+        }
+        if (len1 < len2){
+            return -1;
+        }
+        int index = -1;
+        int num = 0;
+        int temp = 0;
+        int temp2 = 0;
+
+        for (int i = 0; i < haystack.length(); i++){
+            temp = i;//不能放在第二个for循环里
+            num = 0;//重要
+            temp2 = i;
+            for (int j = 0; j < needle.length(); j++){
+
+                if (temp2 >= len1){
+                    break;
+                }
+                if (haystack.charAt(temp2) != needle.charAt(j)){
+                    break;
+                } else {
+                    temp2++;
+                    num++;
+                }
+
+
+            }
+            if (num == needle.length()){
+                index = temp;
+                break;
+            }
+        }
+
+        return index;
+    }
+
+
+
+
+    /**
+     * 38.
+     */
+    public String countAndSay(int n) {
+
+//        StringBuilder curr=new StringBuilder("1");
+//        StringBuilder prev;
+//        int count;
+//        char say;
+//        for (int i=1;i<n;i++){
+//            prev=curr;
+//            curr=new StringBuilder();
+//            count=1;
+//            say=prev.charAt(0);
+//
+//            for (int j=1,len=prev.length();j<len;j++){
+//                if (prev.charAt(j)!=say){
+//                    curr.append(count).append(say);
+//                    count=1;
+//                    say=prev.charAt(j);
+//                }
+//                else count++;
+//            }
+//            curr.append(count).append(say);
+//        }
+//        return curr.toString();
+
+        StringBuilder curr = new StringBuilder("1");
+        StringBuilder prev;
+        int count;
+        char say;
+
+        for (int i = 1; i < n; i++){
+            prev = curr;
+            curr = new StringBuilder();
+            count = 1;
+            say = prev.charAt(0);
+            for (int j = 1, len = prev.length(); j < len; j++){
+                if (say == prev.charAt(j)){
+                    count++;
+                } else {
+                    curr.append(count).append(say);
+                    count = 1;
+                    say = prev.charAt(j);
+                }
+
+            }
+            curr.append(count).append(say);
+        }
+
+        return String.valueOf(curr);
 
     }
 
