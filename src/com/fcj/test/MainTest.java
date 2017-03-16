@@ -222,24 +222,25 @@ public class MainTest {
 //        solution.print(arrs);
 
 
-//        Scanner sc = new Scanner(System.in);
-//
-////        while (sc.hasNext()){
-//            int count = sc.nextInt();
-//            Set<Integer> set = new TreeSet<Integer>();
-//            for (int i = 0; i < count; i++){
-//                int num = sc.nextInt();
-//
-//                set.add(num);
-//            }
-//            for (int arr : set){
-//                System.out.println(arr);
-//            }
-//        }
+        Scanner sc = new Scanner(System.in);
+
+        while (sc.hasNext()){
+            int count = sc.nextInt();
+            Set<Integer> set = new TreeSet<Integer>();
+            for (int i = 0; i < count; i++){
+                int num = sc.nextInt();
+
+                set.add(num);
+            }
+            for (int arr : set){
+                System.out.println(arr);
+            }
+        }
+
         //28
-        Solution solution = new Solution();
-        int num = solution.strStr("mississippi","issip");
-        System.out.println(num);
+//        Solution solution = new Solution();
+//        int num = solution.strStr("mississippi","issip");
+//        System.out.println(num);
 
 
 
@@ -252,14 +253,14 @@ public class MainTest {
 //        System.out.println(a);
 
 
-        Map<String, String> map = new HashMap<String, String>();
-        map.put("a", "gd");
-        map.put("r", "gdaa");
-        map.put("t", "gdgd");
-
-        for (Map.Entry entry : map.entrySet()){
-            System.out.println(entry.getKey() + " " + entry.getValue());
-        }
+//        Map<String, String> map = new HashMap<String, String>();
+//        map.put("a", "gd");
+//        map.put("r", "gdaa");
+//        map.put("t", "gdgd");
+//
+//        for (Map.Entry entry : map.entrySet()){
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
 
 //        Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
 //        while (it.hasNext()){

@@ -224,4 +224,31 @@ public class Sortfcj {
         }
     }
 
+    /**
+     * 二分查找法
+     * @param arrs
+     * @param x
+     * @return
+     */
+    public static int binarySearch(int[] arrs, int x){
+
+        int len = arrs.length;
+        int min = 0;
+        int max = len - 1;
+
+        while (min  <= max){
+            int mid = (min + max) / 2;
+            if (arrs[mid] == x){
+                return mid;
+            } else if (arrs[mid] < x){
+                min = mid + 1;//这里一定要有+1
+            } else {
+                max = mid - 1;//这里一定要有-1
+            }
+        }
+
+        return -1;
+
+    }
+
 }
