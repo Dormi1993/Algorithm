@@ -5,7 +5,7 @@ package com.fcj.sort.util;
  */
 public class Main {
     public static void main(String[] args){
-        int[] arrs = new int[]{2,5,6,8,9,12};
+        int[] arrs = new int[]{2};
         int result = Sortfcj.binarySearch(arrs,12);
         System.out.println(result);
     }

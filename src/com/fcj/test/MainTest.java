@@ -206,7 +206,7 @@ public class MainTest {
 
 
 //        Solution solution = new Solution();
-//        int aa = solution.climbStairs(5);
+//        int aa = solution.binarySearch(new int[]{1,2,5,7,8,9}, 8);
 //        System.out.println(aa);
 
         //华为
@@ -222,20 +222,20 @@ public class MainTest {
 //        solution.print(arrs);
 
 
-        Scanner sc = new Scanner(System.in);
-
-        while (sc.hasNext()){
-            int count = sc.nextInt();
-            Set<Integer> set = new TreeSet<Integer>();
-            for (int i = 0; i < count; i++){
-                int num = sc.nextInt();
-
-                set.add(num);
-            }
-            for (int arr : set){
-                System.out.println(arr);
-            }
-        }
+//        Scanner sc = new Scanner(System.in);
+//
+//        while (sc.hasNext()){
+//            int count = sc.nextInt();
+//            Set<Integer> set = new TreeSet<Integer>();
+//            for (int i = 0; i < count; i++){
+//                int num = sc.nextInt();
+//
+//                set.add(num);
+//            }
+//            for (int arr : set){
+//                System.out.println(arr);
+//            }
+//        }
 
         //28
 //        Solution solution = new Solution();
@@ -243,14 +243,40 @@ public class MainTest {
 //        System.out.println(num);
 
 
+        /**
+         * 33.
+         */
+//        Solution solution = new Solution();
+//        int result = solution.search(new int[]{4,5,6,7,0,1,2},0);
+//        System.out.println(result);
+
+        /**
+         * 34.
+         */
+//        Solution solution = new Solution();
+//        int[] result = solution.searchRange(new int[]{5,7,7,8,8,8,10,20},8);
+//        for (int num : result){
+//            System.out.println(num);
+//
+//        }
+        /**
+         * 35.
+         */
+
+
 
         /**
          * 38.
          */
 
-//        Solution solution = new Solution();
-//        String a = solution.countAndSay(4);
-//        System.out.println(a);
+        Solution solution = new Solution();
+        String a = solution.countAndSay(4);
+        System.out.println(a);
+
+//        int num = 2;
+//        StringBuffer stringBuffer = new StringBuffer();
+//        stringBuffer.append(num).append("ef2").append('w');
+//        System.out.println(stringBuffer);
 
 
 //        Map<String, String> map = new HashMap<String, String>();

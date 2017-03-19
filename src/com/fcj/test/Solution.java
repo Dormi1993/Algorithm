@@ -905,33 +905,177 @@ public class Solution {
     }
 
     /**
+     *33.
+     */
+    public int search(int[] nums, int target) {
+        // for (int i = 0; i < nums.length; i++){
+        //     if (nums[i] == target){
+        //         return i;
+        //     }
+        // }
+        // return -1;
+        int len = nums.length;
+        int min = 0;
+        int max = len - 1;
+
+        while (min <= max){
+            int mid = (min + max) / 2;
+            if (nums[mid] == target){
+                return mid;
+            }
+//            if (nums[min] == target){
+//                return min;
+//            }
+//            if (nums[max] == target){
+//                return max;
+//            }
+            if (nums[mid] >= nums[min]){
+                if (nums[min] <= target && target < nums[mid]){//这里的等号不能落，否则会少项
+                    max = mid - 1;
+                } else {
+                    min = mid + 1;
+                }
+//                break;不能有break
+            } else {
+                if (nums[mid] < target && target <= nums[max]){
+                    min = mid + 1;
+                } else {
+                    max = mid - 1;
+                }
+            }
+
+        }
+        return -1;
+    }
+
+    /**
+     * 34.
+     * @param A
+     * @param target
+     * @return
+     */
+    public int[] searchRange(int[] A, int target) {
+
+        int start = Solution.firstGreaterEqual(A, target);
+        if (start == A.length || A[start] != target) {
+            return new int[]{-1, -1};
+        }
+        //下面可以是target+1，虽然有可能没有，但找到的还是正确的
+        return new int[]{start, Solution.firstGreaterEqual(A, target + 1) - 1};
+    }
+
+    //find the first number that is greater than or equal to target.
+    //could return A.length if target is greater than A[A.length-1].
+    //actually this is the same as lower_bound in C++ STL.
+    private static int firstGreaterEqual(int[] A, int target) {
+        int low = 0, high = A.length;//这里的high没有-1
+        while (low < high) {
+            int mid = low + ((high - low) >> 1);
+            //low <= mid < high
+            if (A[mid] < target) {
+                low = mid + 1;
+            } else {
+                //should not be mid-1 when A[mid]==target.
+                //could be mid even if A[mid]>target because mid<high.
+                high = mid;
+            }
+        }
+        return low;//此方法并不是一般的二分查找，因为前面没有return，它的目的是为了return最后的low
+
+    }
+
+    /**
+     * 36. Valid Sudoku
+     * @param board
+     * @return
+     */
+    public boolean isValidSudoku(char[][] board) {
+
+        for (int i = 0; i < 9; i++){
+            Set<Character> rows = new HashSet<Character>();
+            Set<Character> columns = new HashSet<Character>();
+            Set<Character> cubes = new HashSet<Character>();
+            for (int j = 0; j < 9; j++){
+                if (board[i][j] != '.' && !rows.add(board[i][j])){
+                    return false;
+                }
+                if (board[j][i] != '.' && !columns.add(board[j][i])){
+                    return false;
+                }
+                int column = i % 3;
+                int row = i / 3;
+                int a = j % 3;
+                int b = j / 3;
+                if (board[3 * row + b][3 * column + a] != '.' && !cubes.add(board[3 * row + b][3 * column + a])){
+                    return false;
+                }
+
+            }
+        }
+
+        return true;
+
+
+    }
+
+    /**
      * 38. Count and Say
      * @param n
      * @return
      */
     public String countAndSay(int n) {
 
-        StringBuilder curr=new StringBuilder("1");
-        StringBuilder prev;
-        int count;
-        char say;
-        for (int i=1;i<n;i++){
-            prev=curr;
-            curr=new StringBuilder();
-            count=1;
-            say=prev.charAt(0);
-
-            for (int j=1,len=prev.length();j<len;j++){
-                if (prev.charAt(j)!=say){
-                    curr.append(count).append(say);
-                    count=1;
-                    say=prev.charAt(j);
-                }
-                else count++;
-            }
-            curr.append(count).append(say);
+        StringBuffer stringBuffer = new StringBuffer("1");
+        if (n == 1){
+            return stringBuffer.toString();
         }
-        return curr.toString();
+        int index = 1;
+
+        while (index < n){
+            StringBuffer stringBuffer2 = new StringBuffer();
+
+            String str = stringBuffer.toString();
+            int len = str.length();
+            char curr = str.charAt(0);
+            int num = 1;
+
+            for (int i = 1; i < len; i++){
+                if (str.charAt(i) == curr){
+                    num++;
+                } else {
+                    stringBuffer2.append(num).append(curr);
+                    curr = str.charAt(i);
+                    num = 1;
+                }
+            }
+            stringBuffer2.append(num).append(curr);
+            stringBuffer = stringBuffer2;
+            index++;
+        }
+
+        return stringBuffer.toString();
+
+//        StringBuilder curr=new StringBuilder("1");
+//        StringBuilder prev;
+//        int count;
+//        char say;
+//        for (int i=1;i<n;i++){
+//            prev=curr;
+//            curr=new StringBuilder();
+//            count=1;
+//            say=prev.charAt(0);
+//
+//            for (int j=1,len=prev.length();j<len;j++){
+//                if (prev.charAt(j)!=say){
+//                    curr.append(count).append(say);
+//                    count=1;
+//                    say=prev.charAt(j);
+//                }
+//                else count++;
+//            }
+//            curr.append(count).append(say);
+//        }
+//        return curr.toString();
 
 
     }
@@ -1125,18 +1269,20 @@ public class Solution {
 
     }
 
+    //二分查找法，这里有个问题是当数组为空时，会出错
     public int binarySearch(int[] arrs, int k){
         int start = 0;
         int end = arrs.length - 1;
         int mid = arrs.length / 2;
-        if (arrs[mid] == k){
-            return mid;
-        }
+//        if (arrs[mid] == k){
+//            return mid;
+//        }
 
-        while (start <= end){//这里必须有等于号
+        //start <= mid < end
+        while (start < end){//这里没有等号
             mid = (start + end) / 2;
             if (k < arrs[mid]){
-                end = mid - 1;
+                end = mid;//这里没有-1
             } else if (k > arrs[mid]){
                 start = mid + 1;
             } else {
@@ -1146,7 +1292,26 @@ public class Solution {
         return -1;
     }
 
-    //华为
+    //二分查找法递归
+    public int binarySearch(int[] arrs, int start, int end, int k){
+
+        int mid = (start + end) / 2;
+
+        if (arrs[mid] == k){
+            return mid;
+        }
+        if (start >= end){//这步判断一定要有，否则会一直递归下去
+            return -1;
+        } else if (k > arrs[mid]){
+            return binarySearch(arrs, mid + 1, end, k);
+        } else if (k < arrs[mid]){
+            return binarySearch(arrs, start, mid - 1, k);
+        }
+        return -1;
+    }
+
+
+        //华为
     public void sort(int[] arrs){
 
         int len = arrs.length;

@@ -236,7 +236,7 @@ public class Sortfcj {
         int min = 0;
         int max = len - 1;
 
-        while (min  <= max){
+        while (min  <= max){//这里的二分查找法有误
             int mid = (min + max) / 2;
             if (arrs[mid] == x){
                 return mid;
