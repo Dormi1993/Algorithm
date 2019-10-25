@@ -2,13 +2,176 @@ package com.fcj.test;
 
 import com.fcj.test.publicClass.ListNode;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by Administrator on 2017/2/18 0018.
  */
 public class MainTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+
+//        Random random = new Random(4);
+//        for (int i = 0; i < 10; i++){
+////            Math.random()产生0~1的小数
+////            System.out.println(Math.random());
+//            double num = (double) (random.nextInt(40) + 184) / 100;
+//            System.out.println(String.format("%.2f", num));
+//        }
+
+//        try {
+//
+////            String content = "This 啦is the ha哈1234content to write into file啦";
+//
+//            File file = new File("/Users/dormi/research/graduationProject/projects/FDoctorWeb/filefcj01.txt");
+//
+//            // if file doesnt exists, then create it
+//            if (!file.exists()) {
+//                file.createNewFile();
+//            }
+//
+//            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+//            BufferedWriter bw = new BufferedWriter(fw);
+//
+//            long start = 1375315200;
+//            long diff = 1375401600 - start;
+//            long num = start;
+//            int count = 0;
+//            System.out.println(diff);
+//            StringBuffer sb = new StringBuffer();
+//
+//            Random random = new Random(4);
+//
+//            while (count < 30) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 190) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//
+//            while (count < 70) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(4) + 188) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 110) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(8) + 190) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 130) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 192) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 180) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 194) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//
+//            while (count < 230) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 196) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 250) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 194) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 300) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 192) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//            while (count < 350) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(4) + 194) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//
+//            while (count < 430) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 192) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//
+//            while (count < 480) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 194) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//
+//
+//            while (count < 502) {
+//                random.nextInt();
+//                double ran = (double) (random.nextInt(6) + 195) / 100;
+//                sb.append("[").append(num).append("000").append(",").append(String.format("%.2f", ran))
+//                        .append("],");
+//                num += diff;
+//                count++;
+//            }
+//            System.out.println(num);
+//
+////            bw.write(content);
+//            bw.write(String.valueOf(sb));
+//            bw.close();
+//
+//            System.out.println("Done");
+//            System.out.println((1418601600-1375315200)/diff);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         /**
          * 1. Two Sum
@@ -70,7 +233,6 @@ public class MainTest {
 //        System.out.println(result);
 
 
-
         /**
          * 7.
          */
@@ -108,8 +270,10 @@ public class MainTest {
         /**
          * 17.
          */
-//        Solution solution = new Solution();
-//        solution.letterCombinations("43");
+        Solution solution = new Solution();
+
+        ListNode l1 = new ListNode(1);
+
 
 
 
@@ -242,6 +406,20 @@ public class MainTest {
 //        int num = solution.strStr("mississippi","issip");
 //        System.out.println(num);
 
+        //29
+//        Solution solution = new Solution();
+//        int a = solution.divide1(-2147483648, -1);
+//        System.out.println(a);
+
+        //31
+//        Solution solution = new Solution();
+//        int[] nums = new int[]{12,43,7};
+////        int[] nums = new int[]{1,5,1};
+//        solution.nextPermutation(nums);
+//        for (int num : nums){
+//            System.out.println(num);
+//        }
+
 
         /**
          * 33.
@@ -262,38 +440,77 @@ public class MainTest {
         /**
          * 35.
          */
-
+//        Solution solution = new Solution();
+//        int a = solution.searchInsert2(new int[]{1,3,5,7}, 0);
+//        System.out.println(a);
 
 
         /**
          * 38.
          */
 
-        Solution solution = new Solution();
-        String a = solution.countAndSay(4);
-        System.out.println(a);
+//        Solution solution = new Solution();
+//        String a = solution.countAndSay(4);
+//        System.out.println(a);
 
-//        int num = 2;
-//        StringBuffer stringBuffer = new StringBuffer();
-//        stringBuffer.append(num).append("ef2").append('w');
-//        System.out.println(stringBuffer);
+//        Scanner sc = new Scanner(System.in);
+//        String a = sc.nextLine();
+//        System.out.printf("%s\n", a);
 
-
-//        Map<String, String> map = new HashMap<String, String>();
-//        map.put("a", "gd");
-//        map.put("r", "gdaa");
-//        map.put("t", "gdgd");
-//
-//        for (Map.Entry entry : map.entrySet()){
-//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        int a = 4;
+//        if ((a & 0x1) == 1){
+//            System.out.println("ha");
 //        }
 
-//        Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+        /**
+         * 43.
+         */
+//        Solution solution = new Solution();
+//        String str = solution.multiply("123", "2");
+//        System.out.println(str);
+        /**
+         * 46.
+         */
+//        Solution solution = new Solution();
+//        List list = solution.permute(new int[]{1,2,3});
+//        Iterator it = list.iterator();
 //        while (it.hasNext()){
-//            Map.Entry<String,String> entry = it.next();
-//            System.out.println(entry.getKey() + " " + entry.getValue());
+//            System.out.println(it.next());
 //        }
 
+        /**
+         * 47.
+         */
+//        boolean[] a = new boolean[3];
+//
+//        for (boolean as : a){
+//            System.out.println(as);
+//        }
+
+
+    }
+
+    static List<List<String>> queenList = new ArrayList<>();
+
+    public static void bulid(int[] nums) {
+        List<String> tempList = new ArrayList<>();
+
+        String[] strs = new String[nums.length];
+        for (int j = 0; j < strs.length; j++) {
+            strs[j] = ".";
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+
+            strs[i] = "Q";
+//            tempList.addAll(Arrays.asList(strs));
+            tempList.add(String.valueOf(strs));
+
+            strs[i] = ".";
+        }
+
+
+        queenList.add(new ArrayList<>(tempList));
     }
 
     /**
@@ -307,16 +524,16 @@ public class MainTest {
      * @param arr
      * @return
      */
-    public ListNode create(int[] arr){
+    public static ListNode create(int[] arr) {
         //判断输入是否合法
-        if (arr == null || arr.length == 0){
+        if (arr == null || arr.length == 0) {
             return null;
         }
         ListNode head = null;
         ListNode tail = null;
-        for (int i : arr){
+        for (int i : arr) {
             ListNode cur = new ListNode(i);
-            if (head == null){
+            if (head == null) {
                 head = cur;
                 tail = cur;
             } else {
@@ -329,15 +546,20 @@ public class MainTest {
 
     /**
      * 打印一个链表
+     *
      * @param head
      */
-    public void print(ListNode head){
+    public void print(ListNode head) {
         ListNode p = head;
-        while (p != null){
+        while (p != null) {
             System.out.print(p.val + "->");
             p = p.next;
         }
         System.out.print("null");
+    }
+
+    public static void print(int num, Object obj) {
+        System.out.println(String.format("%d + %s", num, obj.toString()));
     }
 
 

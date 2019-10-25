@@ -30,7 +30,7 @@ public class TestSingleton {
     }
     private TestSingleton (){}
     public static final TestSingleton getInstance() {
-        System.out.println("ha");
+        System.out.println("haa");
         return LazyHolder.INSTANCE;
     }
 
