@@ -340,6 +340,44 @@ public class Sortfcj {
     }
 
 
+    public void merge02(int[] nums, int left, int right, int[] tmp) {
+        if (left < right) {
+            int mid = (left + right) >> 1;
+            merge02(nums, left, mid, tmp);
+            merge02(nums, mid + 1, right, tmp);
+
+            merge02ha(nums, left, right, mid, tmp);
+        }
+    }
+
+    private void merge02ha(int[] nums, int left, int right, int mid, int[] tmp) {
+        int i = left;
+        int j = mid;
+        int m = mid + 1;
+        int n = right;
+
+        int k = 0;
+
+        while (i <= j && m <= n) {
+            // 检查处于右边的俩指针，有利于在求逆序数中更方便
+            if (nums[j] > nums[n]) {
+                tmp[k++] = nums[j--];
+            } else {
+                tmp[k++] = nums[n--];
+            }
+        }
+
+        while (i <= j) {
+            tmp[k++] = nums[j--];
+        }
+        while (m <= n) {
+            tmp[k++] = nums[n--];
+        }
+
+        for (int v = 0; v < k; v++) {
+            nums[left + v] = tmp[k - 1 - v];
+        }
+    }
 
 
     //希尔排序

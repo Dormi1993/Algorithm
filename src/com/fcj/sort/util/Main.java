@@ -96,6 +96,18 @@ public class Main {
             System.out.println(num);
         }*/
 
+        int[] nums = new int[]{3,2,1,6,3,2,3,8};
+
+        for (int n : nums) {
+            System.out.println(n);
+        }
+        System.out.println("++++++");
+        Sortfcj sortfcj = new Sortfcj();
+        sortfcj.merge02(nums, 0, nums.length - 1, new int[nums.length]);
+
+        for (int n : nums) {
+            System.out.println(n);
+        }
 
     }
 }
