@@ -46,13 +46,13 @@ public class Main {
 //
 //
 //        //快速排序
-//        int[] arrs3 = new int[]{4,2,5,1,23,12};
-//        int len = arrs3.length;
+        int[] arrs3 = new int[]{4, 2, 5, 1, 23, 5, 12};
+        int len = arrs3.length;
 //        int mid = (0 + len - 1) >> 1;
 //
-//        for (int num : arrs3){
-//            System.out.print(num + " ");
-//        }
+        for (int num : arrs3) {
+            System.out.print(num + " ");
+        }
 //
 //        Sortfcj.mergeSort(arrs3, 0, len - 1, new int[len]);
 //
@@ -62,16 +62,17 @@ public class Main {
 //        }
 
 
+        //下面两行取得下标为0、mid、len - 1三数的中位数，放入第0位
+//        Sortfcj.findMedian(arrs3, 0, len - 1);
+//        Sortfcj.swapRef(arrs3, 0, mid);
 
-/*        //下面两行取得下标为0、mid、len - 1三数的中位数，放入第0位
-        Sortfcj.findMedian(arrs3, 0, len - 1);
-        Sortfcj.swapRef(arrs3, 0, mid);
-
-        System.out.println( "\n" + "-------");
-        Sortfcj.quickSort(arrs3, 0, len - 1);
-        for (int num : arrs3){
+        System.out.println("\n" + "-------");
+//        Sortfcj.quickSort(arrs3, 0, len - 1);
+        Sortfcj.quickSort02(arrs3, 0, len - 1);
+        for (int num : arrs3) {
             System.out.print(num + " ");
-        }*/
+        }
+
 
         /*
         System.out.println("\n" + "-----");
@@ -96,7 +97,8 @@ public class Main {
             System.out.println(num);
         }*/
 
-        int[] nums = new int[]{3,2,1,6,3,2,3,8};
+        System.out.println("\n" + "==================");
+        int[] nums = new int[]{3, 2, 1, 6, 3, 2, 3, 8};
 
         for (int n : nums) {
             System.out.println(n);
